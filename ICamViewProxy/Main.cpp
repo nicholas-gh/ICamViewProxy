@@ -93,38 +93,56 @@ int main(int argc, char **argv)
 	{
 		if( strcmp(argv[i],"-camid") == 0)
 		{
-			++i;
+			if (++i >= argc) {
+			  display_usage();
+			  return 0;
+			};
 			camID = atoi(argv[i]);
 
 			// Do not increment nargs_set as we default this option to cam 1
 		}
 		else if( strcmp(argv[i],"-camhost") == 0 ) 
 		{
-			++i;
+			if (++i >= argc) {
+			  display_usage();
+			  return 0;
+			};
 			camhost = argv[i];
 			++nargs_set;
 		}
 		else if( strcmp(argv[i],"-camport") == 0 )
 		{
-			++i;
+			if (++i >= argc) {
+			  display_usage();
+			  return 0;
+			};
 			camport = atoi(argv[i]);
 			++nargs_set;
 		}
 		else if( strcmp(argv[i], "-proxyport") == 0 )
 		{
-			++i;
+			if (++i >= argc) {
+			  display_usage();
+			  return 0;
+			};
 			proxyport = atoi(argv[i]);
 			++nargs_set;
 		}
 		else if( strcmp(argv[i],"-camuser") == 0 )
 		{
-			++i;
+			if (++i >= argc) {
+			  display_usage();
+			  return 0;
+			};
 			camuser = argv[i];
 			++nargs_set;
 		}
 		else if( strcmp(argv[i],"-campass") == 0 )
 		{
-			++i;
+			if (++i >= argc) {
+			  display_usage();
+			  return 0;
+			};
 			campass = argv[i];
 			++nargs_set;
 		}
@@ -135,7 +153,10 @@ int main(int argc, char **argv)
 		}
 		else if( strcmp(argv[i],"-move") == 0 )
 		{
-			++i;
+			if (++i >= argc) {
+			  display_usage();
+			  return 0;
+			};
 			move = argv[i];
 			++nargs_set; 
 		}
