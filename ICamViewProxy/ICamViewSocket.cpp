@@ -337,7 +337,7 @@ int ICamViewSocket::RequestImage()
 	}
 
 	// set id for reception of data
-	char tmprequestid[4];
+	char tmprequestid[3];
 	sprintf(tmprequestid,"%02d", requestid);
 
 	pRequestImage->data[byteid++] = tmprequestid[0];
@@ -412,13 +412,15 @@ int ICamViewSocket::RequestImage()
 
 			int nrec = nDataLength;
 
-			char filesize[8];
-			memset(filesize,0,8);
+			char filesize[9];
+			memset(filesize,0,9);
 
-			char offset[6];
-			memset(offset,0,6);
+			char offset[7];
+			memset(offset,0,7);
 
-			char sid[2];
+			char sid[3];
+			memset(sid,0,3);
+
 			int recid = 0;
 			// cpy id into buffer
 			memcpy(&sid, &pData[0], 2);
