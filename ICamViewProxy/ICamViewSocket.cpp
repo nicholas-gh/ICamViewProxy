@@ -346,7 +346,7 @@ int ICamViewSocket::RequestImage()
 	// inc here incase we return
 	requestid++;
 
-	// type 3003
+	// type 3003 / type 3002
 	// ie new image
 	pRequestImage->data[byteid++] = '3';
 	pRequestImage->data[byteid++] = '0';
