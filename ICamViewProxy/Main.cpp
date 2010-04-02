@@ -144,7 +144,7 @@ int main(int argc, char **argv)
 
 
 	// Verify we have all args set
-	if(nargs_set != 5 || (bHCAMMode && nargs_set != 6))
+	if((!bHCAMMode && nargs_set != 5) || (bHCAMMode && nargs_set != 6))
 	{
 		display_usage();
 		return 0;
