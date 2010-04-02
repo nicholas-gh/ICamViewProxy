@@ -253,9 +253,9 @@ int ICamViewSocket::Movement(std::string direction)
 	  pRequestMovement->data[byteid++] = '1';
 	else if (direction.compare("down") == 0)
 	  pRequestMovement->data[byteid++] = '2';
-	else if (direction.compare("right") == 0)
-	  pRequestMovement->data[byteid++] = '3';
 	else if (direction.compare("left") == 0)
+	  pRequestMovement->data[byteid++] = '3';
+	else if (direction.compare("right") == 0)
 	  pRequestMovement->data[byteid++] = '4';
 	else {
 	  std::cout << "Unknown movement direction: " << direction << "\n";
